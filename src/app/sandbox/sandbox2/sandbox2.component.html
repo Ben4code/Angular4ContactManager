@@ -1,0 +1,46 @@
+<div class="row" >
+  <div class=" col-sm-8 col-xs-10">
+<h1 class="text-center">Contact Manager</h1>
+
+    
+    <form (submit)="onSubmit(isEdit)">
+      <div class="form-group">
+        <label for="name">Name</label>
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="user.name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="name">Email</label>
+          <input type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="name">Phone</label>
+          <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="user.phone" name="phone">
+      </div>
+      <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+    
+    
+    <hr>
+    <br>
+    <h3>My Contacts</h3>
+    
+    <div class="well" style="color:#000;">  
+         
+        <ul class="list-group" *ngFor="let user of users">
+          <div class="text-center">
+          <li class="list-group-item ">Name: {{user.name}}</li>
+          <li class="list-group-item ">Email: {{user.email}}</li>
+          <li class="list-group-item ">Phone: {{user.phone}}</li>
+         
+            <li class="btn btn-info btn-sm" (click)="onEdit(user)">Edit</li>
+          <li class="btn btn-danger btn-sm "  (click)="onDelete(user.id)">Delete</li>
+          </div>
+          
+          <hr>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+

@@ -1,0 +1,73 @@
+        
+<!-- <button (click)="eventType($event)" class=" btn btn-primary">Toogle</button> -->
+<!-- <div *ngIf="value">
+  <h4>Output: {{output}}</h4>
+</div> -->
+
+<div class="container">
+    <div class="col-md-7">
+    <h1>Contact Us</h1>
+    <form  novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+      <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Name" class="form-control" [(ngModel)]="user.name" name="name" #userName="ngModel" minlength="3" required />
+    </div>
+
+    <div class="alert alert-danger" *ngIf="userName.errors?.required && userName.touched">
+      <p>Name is required</p>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="userName.errors?.minlength && userName.touched">
+      <p>Name should be more than 2 characters long.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email"
+      #userEmail="ngModel"
+      required
+      />
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="userEmail.errors?.required && userEmail.touched">
+      <p>Email is required</p>
+    </div>
+
+     <div class="alert alert-danger" *ngIf="userEmail.errors?.minlength && userName.touched">
+      <p>Email should be more than 4 characters long.</p>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="number" class="form-control" placeholder="Phone" [(ngModel)]="user.phone" name="phone"
+      #userPhone="ngModel"
+      minlength="11"/> 
+    </div>
+  
+    <div class="alert alert-danger" *ngIf="userPhone.errors?.minlength && userPhone.touched">
+          <p>Phone number should be more than 10 characters long.</p>
+    </div>
+
+    <!-- <div class="alert alert-info" *ngIf="value2">{{name}} has been added to array. 
+      <ul *ngFor="let person of people">
+        <li>{{person}}</li>
+      </ul>
+    </div> -->
+
+  <button class="btn btn-info">Submit</button>
+  <hr>
+    </form>
+    <div class="well  list-group" style="color:blueviolet; background:blueviolet;">
+      <p class="list-group-item">Email: nnaemeka.obioha@yahoo.com.</p>
+    <p class="list-group-item">Address: 8 Home Street United Kingdom.</p>
+
+    </div>
+    
+  </div>
+
+
+</div>
+  
